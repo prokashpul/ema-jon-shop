@@ -3,19 +3,9 @@ import "./Header.css";
 import logo from "../../images/Logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { closeBar, openBar } from "../../utilities/Navbartogole";
 
 const Header = () => {
-  // mobile nav bar open and close
-  const openBar = () => {
-    document.querySelector(".open-nav").style.display = "none";
-    document.querySelector(".nav-items").style.left = "0";
-    document.querySelector(".close-nav").style.display = "block";
-  };
-  const closeBar = () => {
-    document.querySelector(".close-nav").style.display = "none";
-    document.querySelector(".open-nav").style.display = "block";
-    document.querySelector(".nav-items").style.left = "-100%";
-  };
   return (
     <header className="header">
       <nav className="header-nav">
@@ -32,7 +22,7 @@ const Header = () => {
           <li className="nav-item">
             <a href="/order-review">Order Review</a>
           </li>
-          <li className="nav-item" onClick={openBar}>
+          <li className="nav-item">
             <a href="/about">About</a>
           </li>
         </ul>

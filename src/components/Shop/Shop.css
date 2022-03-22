@@ -1,0 +1,17 @@
+.shop {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 20px;
+  position: relative;
+}
+.product-side {
+  margin: 108px 82px;
+  overflow: hidden;
+}
+.order-items {
+  position: fixed;
+  background-color: var(--color-secondry);
+  height: 88vh;
+  width: 100%;
+  top: 80px;
+}
