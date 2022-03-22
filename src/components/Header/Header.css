@@ -10,3 +10,34 @@
   display: flex;
   gap: 32px;
 }
+
+.header-nav .svg-inline--fa {
+  color: var(--color-white);
+  font-size: 20px;
+}
+.open-nav,
+.close-nav {
+  display: none;
+  transition: var(--transition);
+}
+
+@media (max-width: 678px) {
+  .header-nav {
+    padding: 0 20px;
+  }
+  .nav-items {
+    flex-direction: column;
+    gap: 20px;
+    height: 88vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    background-color: var(--color-primary);
+    padding: 20px;
+    transition: var(--transition);
+  }
+  .open-nav {
+    display: block;
+  }
+}
