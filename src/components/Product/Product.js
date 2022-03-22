@@ -10,6 +10,7 @@ const Product = ({ product }) => {
       <div className="product-boddy">
         <div className="ptroduct-uptext">
           <h6>{name}</h6>
+          <p>{category}</p>
           <p>Price: ${price}</p>
         </div>
         <div className="ptroduct-downtext">
