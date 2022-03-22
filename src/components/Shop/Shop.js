@@ -11,8 +11,8 @@ const Shop = () => {
       .then((data) => setProducts(data));
   }, []);
   //   cart details add
-  const addToCart = () => {
-    const newCartdetails = [...cartdetails, products];
+  const addToCart = (product) => {
+    const newCartdetails = [...cartdetails, product];
     Setcartdetails(newCartdetails);
   };
   return (
@@ -28,7 +28,6 @@ const Shop = () => {
       </div>
       <div className="order-summary">
         <div className="order-items">
-          <h5>Order Summary</h5>
           <Cartdetails cart={cartdetails}></Cartdetails>
         </div>
       </div>

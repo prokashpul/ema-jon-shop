@@ -10,9 +10,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 45px;
 }
-.order-items {
-  position: fixed;
+.order-summary {
   background-color: var(--color-warning);
+}
+.order-items {
+  position: sticky;
   height: 88vh;
   width: 100%;
   top: 80px;

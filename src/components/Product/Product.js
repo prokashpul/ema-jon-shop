@@ -18,7 +18,7 @@ const Product = ({ product, addToCart }) => {
           <p>Rating :{ratings}</p>
         </div>
       </div>
-      <button className="cart-btn" onClick={addToCart}>
+      <button className="cart-btn" onClick={() => addToCart(product)}>
         <span>Add to Cart</span>
         <FontAwesomeIcon icon={faCartPlus} />
       </button>
