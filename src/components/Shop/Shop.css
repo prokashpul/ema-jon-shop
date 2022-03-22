@@ -1,12 +1,14 @@
 .shop {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  gap: 20px;
   position: relative;
 }
 .product-side {
-  margin: 108px 82px;
+  margin: 120px 30px;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
 }
 .order-items {
   position: fixed;
@@ -14,4 +16,16 @@
   height: 88vh;
   width: 100%;
   top: 80px;
+}
+
+@media (min-width: 1440px) {
+  .product-side {
+    margin: 180px 82px;
+  }
+}
+@media (max-width: 1300px) {
+  .product-side {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 180px 102px;
+  }
 }
