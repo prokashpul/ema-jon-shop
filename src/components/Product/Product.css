@@ -33,7 +33,7 @@
   right: 0%;
   top: 90.75%;
   bottom: -0.2%;
-  background: #ffe0b3;
+  background: var(--color-warning);
   border: 1px solid #95a0a7;
   border-radius: 0px 0px 8px 8px;
   transition: var(--transition);

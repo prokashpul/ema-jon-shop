@@ -12,12 +12,15 @@
 }
 .order-items {
   position: fixed;
-  background-color: var(--color-secondry);
+  background-color: var(--color-warning);
   height: 88vh;
   width: 100%;
   top: 80px;
+  padding: 20px;
 }
-
+.order-items h5 {
+  font-size: 25px;
+}
 @media (min-width: 1440px) {
   .product-side {
     margin: 180px 82px;

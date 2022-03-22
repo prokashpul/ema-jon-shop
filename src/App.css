@@ -15,6 +15,7 @@ body {
 :root {
   --color-primary: #1c2b35;
   --color-secondry: #ff9900;
+  --color-warning: #ffe0b3;
   --color-white: #fff;
   --transition: all 400ms ease;
 }
