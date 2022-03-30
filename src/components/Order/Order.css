@@ -1,0 +1,9 @@
+.product-cart {
+  max-width: 60%;
+  margin: 30px auto;
+}
+@media (max-width: 677px) {
+  .product-cart {
+    max-width: 94%;
+  }
+}

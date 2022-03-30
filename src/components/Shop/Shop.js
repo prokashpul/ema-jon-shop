@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useCart } from "../../hooks/useCart";
 import useProducts from "../../hooks/useProducts";
 import { addToDb, getCartaData } from "../../utilities/fakedb";
 import Cartdetails from "../Cartdetails/Cartdetails";
@@ -6,7 +7,6 @@ import Product from "../Product/Product";
 import "./Shop.css";
 const Shop = () => {
   const [products] = useProducts();
-  const [cartdetails, Setcartdetails] = useState([]);
 
   //   cart details add
   const addToCart = (product) => {
@@ -29,19 +29,7 @@ const Shop = () => {
     addToDb(product.id);
   };
   // localstore data get useEffect
-  useEffect(() => {
-    const getCart = getCartaData();
-    const saveCart = [];
-    for (const id in getCart) {
-      const product = products.find((product) => product.id === id);
-      if (product) {
-        const quantity = getCart[id];
-        product.quantity = quantity;
-        saveCart.push(product);
-      }
-    }
-    Setcartdetails(saveCart);
-  }, [products]);
+  const [cartdetails, Setcartdetails] = useCart(products);
   return (
     <div className="shop">
       <div>
