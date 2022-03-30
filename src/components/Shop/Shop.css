@@ -3,8 +3,12 @@
   grid-template-columns: 4fr 1fr;
   position: relative;
 }
+.shop h2 {
+  text-align: center;
+  margin-top: 30px;
+}
 .product-side {
-  margin: 120px 30px;
+  margin: 30px;
   overflow: hidden;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

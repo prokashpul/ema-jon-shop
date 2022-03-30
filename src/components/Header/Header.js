@@ -4,6 +4,7 @@ import logo from "../../images/Logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { closeBar, openBar } from "../../utilities/Navbartogole";
+import CustomLink from "../CustomLink/CustomLink";
 
 const Header = () => {
   return (
@@ -14,16 +15,16 @@ const Header = () => {
         </div>
         <ul className="nav-items">
           <li className="nav-item">
-            <a href="/shop">Shop</a>
+            <CustomLink to="/shop">Shop</CustomLink>
           </li>
           <li className="nav-item">
-            <a href="/order">Order</a>
+            <CustomLink to="/order">Order</CustomLink>
           </li>
           <li className="nav-item">
-            <a href="/order-review">Order Review</a>
+            <CustomLink to="/inventory">Inventory</CustomLink>
           </li>
           <li className="nav-item">
-            <a href="/about">About</a>
+            <CustomLink to="/about">About</CustomLink>
           </li>
         </ul>
         <div className="open-nav" onClick={openBar}>

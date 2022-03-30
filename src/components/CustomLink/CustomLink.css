@@ -1,0 +1,6 @@
+.link-active {
+  color: var(--color-secondry);
+}
+.inactive {
+  color: #fff;
+}

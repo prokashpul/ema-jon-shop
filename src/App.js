@@ -1,14 +1,24 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Error from "./components/Error/Error";
 import Header from "./components/Header/Header";
 import Shop from "./components/Shop/Shop";
+import Order from "./components/Order/Order";
+import Inventory from "./components/Inventory/Inventory";
+import About from "./components/About/About";
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
-      <main>
-        <Shop></Shop>
-      </main>
+      <Routes>
+        <Route path="/" element={<Shop></Shop>}></Route>
+        <Route path="/shop" element={<Shop></Shop>}></Route>
+        <Route path="/order" element={<Order></Order>}></Route>
+        <Route path="/inventory" element={<Inventory></Inventory>}></Route>
+        <Route path="/about" element={<About></About>}></Route>
+        <Route path="*" element={<Error></Error>}></Route>
+      </Routes>
     </div>
   );
 }

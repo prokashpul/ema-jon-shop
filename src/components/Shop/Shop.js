@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
+import useProducts from "../../hooks/useProducts";
 import { addToDb, getCartaData } from "../../utilities/fakedb";
 import Cartdetails from "../Cartdetails/Cartdetails";
 import Product from "../Product/Product";
 import "./Shop.css";
 const Shop = () => {
-  const [products, setProducts] = useState([]);
+  const [products] = useProducts();
   const [cartdetails, Setcartdetails] = useState([]);
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+
   //   cart details add
   const addToCart = (product) => {
     let newCartdetails = [];
@@ -47,14 +44,17 @@ const Shop = () => {
   }, [products]);
   return (
     <div className="shop">
-      <div className="product-side">
-        {products.slice(0, 20).map((product) => (
-          <Product
-            product={product}
-            key={product.id}
-            addToCart={addToCart}
-          ></Product>
-        ))}
+      <div>
+        <h2>All Products: </h2>
+        <div className="product-side">
+          {products.slice(0, 20).map((product) => (
+            <Product
+              product={product}
+              key={product.id}
+              addToCart={addToCart}
+            ></Product>
+          ))}
+        </div>
       </div>
       <div className="order-summary">
         <div className="order-items">
