@@ -15,10 +15,14 @@
   border-radius: 10px;
   overflow: hidden;
 }
-.btn {
+.delete-btn {
   background-color: var(--color-secondry);
-  padding: 10px;
-  color: var(--color-white);
-  border-radius: 5px;
+  padding: 5px;
+  color: var(--color-warning);
+  border-radius: 100%;
   cursor: pointer;
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  border: solid 1px salmon;
 }

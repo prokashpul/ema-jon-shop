@@ -6,21 +6,31 @@ import Reviews from "../Reviews/Reviews";
 import "./Order.css";
 const Order = () => {
   const [products] = useProducts();
-  const [cartdetails] = useCart(products);
+  const [cartDetails, setCartDetails] = useCart(products);
+
+  const removeToCart = (product) => {
+    const rest = cartDetails.filter((pd) => pd.id !== product.id);
+    setCartDetails(rest);
+    console.log(rest);
+  };
   return (
     <div>
       <div className="shop">
         <div>
           <h2>Reviews Products: </h2>
           <div className="product-cart">
-            {cartdetails.map((product) => (
-              <Reviews product={product} key={product.id}></Reviews>
+            {cartDetails.map((product) => (
+              <Reviews
+                removeToCart={removeToCart}
+                product={product}
+                key={product.id}
+              ></Reviews>
             ))}
           </div>
         </div>
         <div className="order-summary">
           <div className="order-items">
-            <Cartdetails cart={cartdetails}></Cartdetails>
+            <Cartdetails cart={cartDetails}></Cartdetails>
           </div>
         </div>
       </div>

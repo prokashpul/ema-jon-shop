@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useCart } from "../../hooks/useCart";
 import useProducts from "../../hooks/useProducts";
-import { addToDb, getCartaData } from "../../utilities/fakedb";
+import { addToDb } from "../../utilities/fakedb";
 import Cartdetails from "../Cartdetails/Cartdetails";
 import Product from "../Product/Product";
 import "./Shop.css";
