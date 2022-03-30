@@ -1,6 +1,7 @@
 import React from "react";
 import { useCart } from "../../hooks/useCart";
 import useProducts from "../../hooks/useProducts";
+import { removeFromDb } from "../../utilities/fakedb";
 import Cartdetails from "../Cartdetails/Cartdetails";
 import Reviews from "../Reviews/Reviews";
 import "./Order.css";
@@ -11,7 +12,7 @@ const Order = () => {
   const removeToCart = (product) => {
     const rest = cartDetails.filter((pd) => pd.id !== product.id);
     setCartDetails(rest);
-    console.log(rest);
+    removeFromDb(product.id);
   };
   return (
     <div>
