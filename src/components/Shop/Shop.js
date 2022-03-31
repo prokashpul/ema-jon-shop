@@ -45,7 +45,8 @@ const Shop = () => {
           ))}
         </div>
       </div>
-      <div className="order-summary">
+
+      <div className="order-summary shop-right">
         <div className="order-items">
           <Cartdetails cart={cartdetails}>
             <Link to="/order" className="btn">

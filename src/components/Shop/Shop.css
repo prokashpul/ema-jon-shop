@@ -48,3 +48,21 @@
     margin: 180px 102px;
   }
 }
+@media (max-width: 677px) {
+  .shop {
+    grid-template-columns: 1fr;
+  }
+  .product {
+    width: 100%;
+  }
+  .product img {
+    width: 100%;
+  }
+  .shop-right {
+    display: none;
+  }
+  .product-side {
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
+}
