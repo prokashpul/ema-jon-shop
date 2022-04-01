@@ -4,9 +4,11 @@ import logo from "../../images/Logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import CustomLink from "../CustomLink/CustomLink";
+import CartNum from "../CartNum/CartNum";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+
   return (
     <header className="header">
       <nav className="header-nav">
@@ -21,7 +23,12 @@ const Header = () => {
             <CustomLink to="/shop">Shop</CustomLink>
           </li>
           <li className="nav-item">
-            <CustomLink to="/order">Order</CustomLink>
+            <CustomLink to="/order">
+              Order
+              <sup>
+                <CartNum />
+              </sup>
+            </CustomLink>
           </li>
           <li className="nav-item">
             <CustomLink to="/inventory">Inventory</CustomLink>
