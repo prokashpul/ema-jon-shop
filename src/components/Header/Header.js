@@ -17,7 +17,7 @@ const Header = () => {
         </div>
         <ul
           className={open ? "open nav-items" : "nav-items"}
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen(false)}
         >
           <li className="nav-item">
             <CustomLink to="/shop">Shop</CustomLink>
@@ -35,6 +35,9 @@ const Header = () => {
           </li>
           <li className="nav-item">
             <CustomLink to="/about">About</CustomLink>
+          </li>
+          <li className="nav-item">
+            <CustomLink to="/login">Log In</CustomLink>
           </li>
         </ul>
         <div className="open-nav" onClick={() => setOpen(!open)}>
