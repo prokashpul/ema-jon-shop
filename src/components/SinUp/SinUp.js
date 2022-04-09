@@ -35,6 +35,7 @@ const SinUp = () => {
       setErrorMassage("Password must be 6 letter up !!!");
       return;
     }
+
     createUserWithEmailAndPassword(email, password);
   };
 
@@ -78,7 +79,8 @@ const SinUp = () => {
             />
           </div>
           <p className="error-massage">{errorMassage}</p>
-          <input className="btn" type="submit" value="Log In" />
+
+          <input className="btn" type="submit" value="Sin Up" />
         </form>
         <div className="form-link">
           Already a Member <Link to="/login">Log In</Link>
