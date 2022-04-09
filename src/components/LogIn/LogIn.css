@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: -10px 10px 0px var(--color-secondry);
+  padding-bottom: 20px;
 }
 .form-title {
   font-size: 35px;

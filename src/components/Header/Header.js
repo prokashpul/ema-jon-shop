@@ -5,10 +5,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import CustomLink from "../CustomLink/CustomLink";
 import CartNum from "../CartNum/CartNum";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+  const logout = () => {
+    signOut(auth);
+    navigate("/login");
+  };
   return (
     <header className="header">
       <nav className="header-nav">
@@ -36,9 +45,17 @@ const Header = () => {
           <li className="nav-item">
             <CustomLink to="/about">About</CustomLink>
           </li>
-          <li className="nav-item">
-            <CustomLink to="/login">Log In</CustomLink>
-          </li>
+          {user ? (
+            <li className="nav-item">
+              <button onClick={logout} className="btn">
+                Sin Out
+              </button>
+            </li>
+          ) : (
+            <li className="nav-item">
+              <CustomLink to="/login">Log In</CustomLink>
+            </li>
+          )}
         </ul>
         <div className="open-nav" onClick={() => setOpen(!open)}>
           {!open ? (

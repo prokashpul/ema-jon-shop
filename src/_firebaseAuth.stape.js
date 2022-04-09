@@ -10,5 +10,6 @@
  * 9. firebase deploy
  * 10. goto Authenticate and enable or access auth option /email password/google etc
  * 11. npm install --save react-firebase-hooks
- *
+ * 12. set useCreateUserWithEmailAndPassword sinup page
+ * set useSignInWithEmailAndPassword log in page
  */
