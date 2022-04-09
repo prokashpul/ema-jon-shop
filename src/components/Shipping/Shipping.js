@@ -1,15 +1,15 @@
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Shipping = () => {
+  const [user] = useAuthState(auth);
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  console.log(name, phone, address);
   const nameBlur = (e) => {
     setName(e.target.value);
-  };
-  const emailBlur = (e) => {
-    setEmail(e.target.value);
   };
   const phoneBlur = (e) => {
     setPhone(e.target.value);
@@ -38,11 +38,11 @@ const Shipping = () => {
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
-              onBlur={emailBlur}
               type="email"
               name="email"
               id="email"
-              required
+              value={user?.email}
+              readOnly
             />
           </div>
           <div className="form-group">
