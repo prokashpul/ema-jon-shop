@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: -10px 10px 0px var(--color-secondry);
 }
 .form-title {
   font-size: 35px;
@@ -38,6 +39,7 @@
   color: var(--color-primary);
   font-size: 20px;
   transition: var(--transition);
+  cursor: pointer;
 }
 .form-container .btn:hover {
   background-color: var(--color-secondry);

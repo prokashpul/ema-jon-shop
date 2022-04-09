@@ -20,5 +20,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const emaJonApp = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(emaJonApp);
-export const auth = getAuth(emaJonApp);
-export default firebaseConfig;
+const auth = getAuth(emaJonApp);
+export default auth;

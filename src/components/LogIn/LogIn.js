@@ -2,18 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./LogIn.css";
 const LogIn = () => {
+  const submitFormHandel = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="form-container">
       <div>
         <h2 className="form-title">Log In</h2>
-        <form action="">
+        <form action="" onSubmit={submitFormHandel}>
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" required />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" />
+            <input type="password" name="password" id="password" required />
           </div>
           <input className="btn" type="submit" value="Log In" />
         </form>
