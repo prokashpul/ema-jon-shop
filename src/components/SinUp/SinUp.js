@@ -7,8 +7,10 @@ import {
 import "./SinUp.css";
 import auth from "../../firebase.init";
 import google from "../../images/Google.svg";
+import Title from "../../Title.function";
 
 const SinUp = () => {
+  Title("Create naw accounts");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [conformPassword, setConformPassword] = useState("");

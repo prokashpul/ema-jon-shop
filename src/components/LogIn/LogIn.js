@@ -6,8 +6,10 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import google from "../../images/Google.svg";
+import Title from "../../Title.function";
 import "./LogIn.css";
 const LogIn = () => {
+  Title("Log in");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =

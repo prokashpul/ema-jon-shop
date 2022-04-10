@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import useProducts from "../../hooks/useProducts";
+import Title from "../../Title.function";
 import { removeFromDb } from "../../utilities/fakedb";
 import Cartdetails from "../Cartdetails/Cartdetails";
 import Reviews from "../Reviews/Reviews";
 import "./Order.css";
 const Order = () => {
+  Title("Your Orders ");
   const [products] = useProducts();
   const [cartDetails, setCartDetails] = useCart(products);
 

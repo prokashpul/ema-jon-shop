@@ -6,7 +6,9 @@ import Cartdetails from "../Cartdetails/Cartdetails";
 import Product from "../Product/Product";
 import "./Shop.css";
 import { Link } from "react-router-dom";
+import Title from "../../Title.function";
 const Shop = () => {
+  Title("Ema jon shop");
   const [products] = useProducts();
 
   //   cart details add

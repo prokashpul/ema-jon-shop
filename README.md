@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+live site with https://ema-jon-shop-ce231.web.app/
 
 ## `RequiredAuth.js`
 
@@ -31,4 +31,24 @@ const from = location.state?.from?.pathname || "/";
 if (user) {
   navigate(from, { replace: true });
 }
+```
+
+# `title dynamic`
+
+`create Title.js and into wright code`
+
+```javascript
+const Title = (newTitle) => {
+  return (document.title = newTitle);
+};
+
+export default Title;
+```
+
+`go to spaced page `
+
+```javascript
+input Title from "./Title.js"
+
+Title("Page title")
 ```
