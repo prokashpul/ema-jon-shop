@@ -58,11 +58,47 @@
 .form-link a:hover {
   color: var(--color-primary);
 }
-
+.other-sinin {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+  margin: 20px 0;
+  color: var(--color-primary);
+}
+.other-sinin span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-secondry);
+}
+.google-button {
+  background-color: transparent;
+  border: 1px solid var(--color-secondry);
+  width: 400px;
+  height: 55px;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.google-button:hover {
+  background: var(--color-secondry);
+  color: var(--color-white);
+}
+.google-button img {
+  width: 30px;
+  margin-right: 10px;
+}
 @media (max-width: 677px) {
   .form-container {
     width: 95%;
   }
+  .google-button,
   .form-group input,
   .form-container .btn {
     width: 100%;

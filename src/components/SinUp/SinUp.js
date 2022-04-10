@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import "./SinUp.css";
 import auth from "../../firebase.init";
+import google from "../../images/Google.svg";
 
 const SinUp = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +16,9 @@ const SinUp = () => {
   const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth);
   const navigate = useNavigate();
-
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const emailHandel = (event) => {
     setEmail(event.target.value);
   };
@@ -40,7 +46,7 @@ const SinUp = () => {
   };
 
   if (user) {
-    navigate("/shop");
+    navigate(from, { replace: true });
   }
 
   return (
@@ -82,6 +88,22 @@ const SinUp = () => {
 
           <input className="btn" type="submit" value="Sin Up" />
         </form>
+        <div className="other-sinin">
+          <span></span>
+          <p>Sin Up with Other</p>
+          <span></span>
+        </div>
+        <button
+          onClick={() =>
+            signInWithGoogle().then(() => {
+              navigate(from, { replace: true });
+            })
+          }
+          className=" google-button"
+        >
+          {" "}
+          <img src={google} alt="" /> Sin Up with Google
+        </button>
         <div className="form-link">
           Already a Member <Link to="/login">Log In</Link>
         </div>
