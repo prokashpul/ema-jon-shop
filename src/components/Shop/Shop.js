@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useCart } from "../../hooks/useCart";
 import useProducts from "../../hooks/useProducts";
 import { addToDb } from "../../utilities/fakedb";
@@ -9,27 +9,45 @@ import { Link } from "react-router-dom";
 import Title from "../../Title.function";
 const Shop = () => {
   Title("Ema jon shop");
-  const [products] = useProducts();
+  // const [products] = useProducts();
+  const [pageCount, setPageCount] = useState(0);
+  const [page, setPage] = useState(0);
+  const [size, setSize] = useState(10);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/product?page=${page}&size=${size}`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [page, size]);
+  useEffect(() => {
+    fetch("http://localhost:5000/productCount")
+      .then((res) => res.json())
+      .then((data) => {
+        const count = data.count;
+        const pages = Math.ceil(count / 10);
+        setPageCount(pages);
+      });
+  }, []);
 
   //   cart details add
   const addToCart = (product) => {
     let newCartdetails = [];
     const exsits = cartdetails.find(
-      (productArray) => productArray.id === product.id
+      (productArray) => productArray._id === product._id
     );
     if (!exsits) {
       product.quantity = 1;
       newCartdetails = [...cartdetails, product];
     } else {
       const rest = cartdetails.filter(
-        (productArray) => productArray.id !== product.id
+        (productArray) => productArray._id !== product._id
       );
       product.quantity = product.quantity + 1;
       newCartdetails = [...rest, exsits];
     }
 
     Setcartdetails(newCartdetails);
-    addToDb(product.id);
+    addToDb(product._id);
   };
   // localstore data get useEffect
   const [cartdetails, Setcartdetails] = useCart(products);
@@ -38,13 +56,32 @@ const Shop = () => {
       <div>
         <h2>All Products: </h2>
         <div className="product-side">
-          {products.slice(0, 20).map((product) => (
+          {products.map((product) => (
             <Product
               product={product}
-              key={product.id}
+              key={product._id}
               addToCart={addToCart}
             ></Product>
           ))}
+        </div>
+        <div className="pagination">
+          {[...Array(pageCount).keys()].map((number) => (
+            <button
+              key={number}
+              className={page === number ? "selected" : ""}
+              onClick={() => setPage(number)}
+            >
+              {number}
+            </button>
+          ))}
+          <select
+            className="pageSelected"
+            onChange={(event) => setSize(event.target.value)}
+          >
+            <option value="5">5</option>
+            <option defaultValue="10">10</option>
+            <option value="15">15</option>
+          </select>
         </div>
       </div>
 

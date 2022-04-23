@@ -37,6 +37,28 @@
 .btn:hover {
   background-color: var(--color-primary);
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+.pagination button {
+  height: 20px;
+  width: 20px;
+  color: var(--color-secondry);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
+  transition: all 0.5s ease;
+}
+.pagination .selected {
+  color: var(--color-white);
+  background-color: var(--color-secondry);
+}
+.pageSelected {
+  border: 1px solid var(--color-primary);
+}
 @media (min-width: 1440px) {
   .product-side {
     margin: 180px 82px;
