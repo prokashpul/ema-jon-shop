@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useCart } from "../../hooks/useCart";
-import useProducts from "../../hooks/useProducts";
+// import useProducts from "../../hooks/useProducts";
 import { addToDb } from "../../utilities/fakedb";
 import Cartdetails from "../Cartdetails/Cartdetails";
 import Product from "../Product/Product";
@@ -71,7 +71,7 @@ const Shop = () => {
               className={page === number ? "selected" : ""}
               onClick={() => setPage(number)}
             >
-              {number}
+              {number + 1}
             </button>
           ))}
           <select
@@ -79,7 +79,9 @@ const Shop = () => {
             onChange={(event) => setSize(event.target.value)}
           >
             <option value="5">5</option>
-            <option defaultValue="10">10</option>
+            <option Value="10" selected>
+              10
+            </option>
             <option value="15">15</option>
           </select>
         </div>

@@ -10,7 +10,7 @@ import "./Order.css";
 const Order = () => {
   Title("Your Orders ");
   const [products] = useProducts();
-  const [cartDetails, setCartDetails] = useCart(products);
+  const [cartDetails, setCartDetails] = useCart();
 
   const removeToCart = (product) => {
     const rest = cartDetails.filter((pd) => pd._id !== product._id);
