@@ -7,7 +7,7 @@ const useCart = () => {
     const cartData = getCartaData();
     let saveCart = [];
     const keys = Object.keys(cartData);
-    fetch("http://localhost:5000/product/keys", {
+    fetch("https://emajon-sever.herokuapp.com/product/keys", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(keys),

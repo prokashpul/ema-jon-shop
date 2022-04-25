@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 live site with https://ema-jon-shop-ce231.web.app/
+server-site git - https://github.com/prokashpul/emajon-server
 
 ## `RequiredAuth.js`
 
